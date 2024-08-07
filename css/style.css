@@ -1,5 +1,26 @@
 /* Base */
+.nanum-gothic-extrabold {
+  font-family: "Nanum Gothic", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.nanum-gothic-bold {
+  font-family: "Nanum Gothic", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.nanum-gothic-regular {
+  font-family: "Nanum Gothic", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+
 body {
+  
   line-height: 1.7;
   color: #8c92a0;
   font-weight: 300;
@@ -22,6 +43,8 @@ a {
 
 .text-black {
   color: #000; }
+
+  
 
 .site-wrap:before {
   -webkit-transition: .3s all ease-in-out;
@@ -160,7 +183,8 @@ a {
     font-size: 20px;
     padding-left: 10px;
     padding-right: 10px;
-    border: 2px solid #25262a; }
+    border-radius: 5px;
+    border: 1px solid #25262a; }
     .site-navbar .site-logo a:hover {
       text-decoration: none; }
   .site-navbar a {
