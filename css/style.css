@@ -470,6 +470,10 @@ a {
 
 /* Blocks */
 .site-blocks-cover {
+  background-image: url(images/hero_magnet.png);
+  background-position: left top; /* Resmi sola hizalar */
+  background-size: cover; /* Resmin konteynırın tamamını kaplamasını sağlar */
+  background-repeat: no-repeat; /* Resmin tekrar etmesini engeller */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center; }
