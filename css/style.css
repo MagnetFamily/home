@@ -469,14 +469,24 @@ a {
                 padding-left: 60px; }
 
 /* Blocks */
+.pl-4, .px-4 {
+  padding-left: 2.5rem !important;
+}
 .site-blocks-cover {
-  background-image: url(images/hero_magnet.png);
-  background-position: left top; /* Resmi sola hizalar */
-  background-size: cover; /* Resmin konteynırın tamamını kaplamasını sağlar */
-  background-repeat: no-repeat; /* Resmin tekrar etmesini engeller */
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center; }
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+  background-color: #e1dfda;
+}
+.site-blocks-cover img {
+  border-radius: 12px;
+  max-width: 100%;
+  height: auto;
+}
+.intro-text {
+  max-width: 500px;
+}
   .site-blocks-cover, .site-blocks-cover .row {
     min-height: 600px;
     height: calc(100vh - 174px); }
