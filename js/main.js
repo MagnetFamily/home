@@ -1,4 +1,62 @@
 
+window.onload = () => {
+    // Sayfa yüklendiğinde yalnızca resmi göster
+    const mainImage = document.getElementById('mainImage');
+    const mainVideo = document.getElementById('mainVideo');
+    mainImage.style.display = 'block';
+    mainVideo.style.display = 'none';
+};
+
+function changeMedia(src) {
+    const mainImage = document.getElementById('mainImage');
+    const mainVideo = document.getElementById('mainVideo');
+
+    if (src.endsWith('.mp4')) {
+        // Video
+        mainVideo.src = src;
+        mainVideo.style.display = 'block'; // Show video
+        mainImage.style.display = 'none';  // Hide image
+        mainVideo.play(); // Play the video
+        
+        // Pause any previously playing video
+        const currentlyPlayingVideo = document.querySelector('video:not([style*="display: none"])');
+        if (currentlyPlayingVideo && currentlyPlayingVideo !== mainVideo) {
+            currentlyPlayingVideo.pause(); // Pause the currently playing video
+        }
+    } else {
+        // Image
+        mainImage.src = src;
+        mainImage.style.display = 'block'; // Show image
+        mainVideo.style.display = 'none';  // Hide video
+        
+        // Pause video when switching back to image
+        if (!mainVideo.paused) {
+            mainVideo.pause(); // Pause the video
+        }
+    }
+}
+
+function scrollThumbnails(direction) {
+    const thumbnailsWrapper = document.querySelector('.thumbnails');
+    const scrollAmount = direction * 150; // Adjust this value to change scroll distance
+    thumbnailsWrapper.scrollBy({
+        left: scrollAmount,
+        behavior: 'smooth'
+    });
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
  
  AOS.init({
  	duration: 800,
@@ -201,3 +259,12 @@ jQuery(document).ready(function($) {
 
 
 });
+
+
+
+
+
+
+
+
+
