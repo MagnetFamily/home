@@ -203,7 +203,16 @@
 
 
 
+.align-items-center {
+  display: flex; /* Use Flexbox */
+  justify-content: center; /* Horizontally centers the content */
+  align-items: center; /* Vertically centers the content */
+}
 
+.site-section-heading {
+  margin: 0 auto; /* Ensure automatic margins on left and right to center */
+  text-align: center; /* Ensure the text is centered within the element */
+}
 
 
 
