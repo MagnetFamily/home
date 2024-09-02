@@ -1,54 +1,83 @@
 
-window.onload = () => {
-    // Sayfa yüklendiğinde yalnızca resmi göster
-    const mainImage = document.getElementById('mainImage');
-    const mainVideo = document.getElementById('mainVideo');
-    mainImage.style.display = 'block';
-    mainVideo.style.display = 'none';
-};
+// window.onload = () => {
+//     // Sayfa yüklendiğinde yalnızca resmi göster
+//     const mainImage = document.getElementById('mainImage');
+//     const mainVideo = document.getElementById('mainVideo');
+//     mainImage.style.display = 'block';
+//     mainVideo.style.display = 'none';
+// };
+
+// function changeMedia(src) {
+//     const mainImage = document.getElementById('mainImage');
+//     const mainVideo = document.getElementById('mainVideo');
+
+//     if (src.endsWith('.mp4')) {
+//         // Video
+//         mainVideo.src = src;
+//         mainVideo.style.display = 'block'; // Show video
+//         mainImage.style.display = 'none';  // Hide image
+//         mainVideo.play(); // Play the video
+        
+//         // Pause any previously playing video
+//         const currentlyPlayingVideo = document.querySelector('video:not([style*="display: none"])');
+//         if (currentlyPlayingVideo && currentlyPlayingVideo !== mainVideo) {
+//             currentlyPlayingVideo.pause(); // Pause the currently playing video
+//         }
+//     } else {
+//         // Image
+//         mainImage.src = src;
+//         mainImage.style.display = 'block'; // Show image
+//         mainVideo.style.display = 'none';  // Hide video
+        
+//         // Pause video when switching back to image
+//         if (!mainVideo.paused) {
+//             mainVideo.pause(); // Pause the video
+//         }
+//     }
+// }
+
+// function scrollThumbnails(direction) {
+//     const thumbnailsWrapper = document.querySelector('.thumbnails');
+//     const scrollAmount = direction * 150; // Adjust this value to change scroll distance
+//     thumbnailsWrapper.scrollBy({
+//         left: scrollAmount,
+//         behavior: 'smooth'
+//     });
+// }
+
+
+
+
 
 function changeMedia(src) {
     const mainImage = document.getElementById('mainImage');
     const mainVideo = document.getElementById('mainVideo');
 
     if (src.endsWith('.mp4')) {
-        // Video
         mainVideo.src = src;
-        mainVideo.style.display = 'block'; // Show video
-        mainImage.style.display = 'none';  // Hide image
-        mainVideo.play(); // Play the video
+        mainVideo.style.display = 'block';
+        mainImage.style.display = 'none';
+        mainVideo.play();
         
-        // Pause any previously playing video
+        // Mevcut videoyu durdur
         const currentlyPlayingVideo = document.querySelector('video:not([style*="display: none"])');
         if (currentlyPlayingVideo && currentlyPlayingVideo !== mainVideo) {
-            currentlyPlayingVideo.pause(); // Pause the currently playing video
+            currentlyPlayingVideo.pause();
         }
     } else {
-        // Image
         mainImage.src = src;
-        mainImage.style.display = 'block'; // Show image
-        mainVideo.style.display = 'none';  // Hide video
-        
-        // Pause video when switching back to image
+        mainImage.style.display = 'block';
+        mainVideo.style.display = 'none';
         if (!mainVideo.paused) {
-            mainVideo.pause(); // Pause the video
+            mainVideo.pause();
         }
     }
+
+    // Küçük ekranlarda medya değiştiğinde otomatik olarak yukarıya odaklan
+    if (window.innerWidth <= 480) {
+        document.querySelector('.main-media').scrollIntoView({ behavior: 'smooth' });
+    }
 }
-
-function scrollThumbnails(direction) {
-    const thumbnailsWrapper = document.querySelector('.thumbnails');
-    const scrollAmount = direction * 150; // Adjust this value to change scroll distance
-    thumbnailsWrapper.scrollBy({
-        left: scrollAmount,
-        behavior: 'smooth'
-    });
-}
-
-
-
-
-
 
 
 
